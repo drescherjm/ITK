@@ -30,9 +30,7 @@ elseif( ${VTK_VERSION} VERSION_LESS 6.0.0 )
   set(ITKLevelSetsv4Visualization_VTK_LIBRARIES ${VTK_LIBRARIES})
 else()
   vtk_module_config(ITKLevelSetsv4Visualization_VTK
-    vtkCommonCore
     vtkRenderingAnnotation
-    vtkRenderingCore
     vtkRendering${VTK_RENDERING_BACKEND}
     vtkRenderingFreeType
     ${_target_freetypeopengl}
@@ -88,9 +86,7 @@ if( ${VTK_VERSION} VERSION_LESS 6.0.0 )
   set(ITKLevelSetsv4Visualization_VTK_LIBRARIES ${VTK_LIBRARIES})
 else()
   vtk_module_config(ITKLevelSetsv4Visualization_VTK
-    vtkCommonCore
     vtkRenderingAnnotation
-    vtkRenderingCore
     vtkRendering${VTK_RENDERING_BACKEND}
     vtkRenderingFreeType
     ${_target_freetypeopengl}
@@ -122,9 +118,7 @@ if(NOT ITK_BINARY_DIR)
     set(ITKLevelSetsv4Visualization_VTK_LIBRARIES ${VTK_LIBRARIES})
   else()
     vtk_module_config(ITKLevelSetsv4Visualization_VTK
-      vtkCommonCore
       vtkRenderingAnnotation
-      vtkRenderingCore
       vtkRendering${VTK_RENDERING_BACKEND}
       vtkRenderingFreeType
       ${_target_freetypeopengl}

@@ -36,8 +36,6 @@ else()
     set(_wrap_module vtkWrappingPythonCore)
   endif()
   vtk_module_config(ITKVtkGlue_VTK
-    vtkCommonCore
-    vtkRenderingCore
     vtkRendering${VTK_RENDERING_BACKEND}
     vtkRenderingFreeType
     ${_target_freetypeopengl}
@@ -90,8 +88,6 @@ else()
     set(_wrap_module vtkWrappingPythonCore)
   endif()
   vtk_module_config(ITKVtkGlue_VTK
-    vtkCommonCore
-    vtkRenderingCore
     vtkRendering${VTK_RENDERING_BACKEND}
     vtkRenderingFreeType
     ${_target_freetypeopengl}
@@ -129,8 +125,6 @@ if(NOT ITK_BINARY_DIR)
       set(_wrap_module vtkWrappingPythonCore)
     endif()
     vtk_module_config(ITKVtkGlue_VTK
-      vtkCommonCore
-      vtkRenderingCore
       vtkRendering${VTK_RENDERING_BACKEND}
       vtkRenderingFreeType
       ${_target_freetypeopengl}

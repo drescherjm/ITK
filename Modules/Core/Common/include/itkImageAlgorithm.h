@@ -132,6 +132,18 @@ struct ImageAlgorithm
 
 /** \endcond */
 
+  /**
+   * \brief Sets the output region to the smallest
+   * region of the output image that fully contains
+   * the physical space covered by the input
+   * region of the input image
+   */
+  template<typename InputImageType, typename OutputImageType>
+  static typename OutputImageType::RegionType
+  EnlargeRegionOverBox(const typename InputImageType::RegionType & inputRegion,
+                       const InputImageType* inputImage,
+                       const OutputImageType* outputImage);
+
 private:
 
   /** This is an optimized method which requires the input and
