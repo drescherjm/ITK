@@ -1070,6 +1070,11 @@ void GDCMImageIO::Write(const void *buffer)
       }
     }
 
+  // Handle RGB Images
+  if (this->GetNumberOfComponents() > 1) {
+	  outpixeltype.SetSamplesPerPixel(this->GetNumberOfComponents());
+  }
+
   image.SetPhotometricInterpretation(pi);
   if( outpixeltype != gdcm::PixelFormat::UNKNOWN )
     {
@@ -1110,7 +1115,7 @@ void GDCMImageIO::Write(const void *buffer)
 
     image.SetIntercept(m_RescaleIntercept);
     image.SetSlope(m_RescaleSlope);
-    char *copyBuffer = new char[len];
+	char *copyBuffer = new char[numberOfBytes];
     const char * inputBuffer = static_cast< const char *>( buffer );
     ir.InverseRescale(copyBuffer, inputBuffer, numberOfBytes);
     pixeldata.SetByteValue(copyBuffer, static_cast<uint32_t>(len));
